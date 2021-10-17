@@ -54,6 +54,7 @@ export default function Publications() {
                 <a
                   href="https://sites.google.com/view/agi-and-oe/"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   On Artificial Intelligence and Open-Endedness{" "}
                 </a>
