@@ -42,7 +42,7 @@ export default function Home() {
           time reading books. The Incerto series by Nassim Taleb is among my
           absolute favourites. I enjoy going out to do just any fun activity.
         </Typography>
-        <img src={profile} className={classes.profile} alt="profile photo" />
+        <img src={profile} className={classes.profile} alt="profile" />
       </Box>
     </div>
   );
