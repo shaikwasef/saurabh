@@ -1,0 +1,20 @@
+.menu-container {
+  max-width: 250px;
+  min-height: 100vh;
+  max-height: 100%;
+  background-image: url("../assets/sidebar.jpeg");
+  background-repeat: repeat;
+  background-size: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-options {
+  color: white;
+  cursor: pointer;
+  width: 250px;
+}
+
+.menu-options:hover {
+  color: rgb(214, 214, 214);
+}
