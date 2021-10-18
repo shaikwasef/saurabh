@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles(() => ({
   resume: {
-    marginTop: "60px",
+    marginTop: "30px",
   },
 }));
 
@@ -13,7 +13,7 @@ export default function Resume() {
       <embed
         src="https://drive.google.com/file/d/1iu2xA6N2Oj01SZq-4-puZCiNV7-lOezI/preview"
         width="900"
-        height="475"
+        height="2320"
       />
     </div>
   );

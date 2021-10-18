@@ -4,6 +4,8 @@ import Publications from "./Publications";
 import Resume from "./Resume";
 import "./Menu.css";
 import Portfolio from "./Portfolio";
+import { useState } from "react";
+import clsx from "clsx";
 
 const useStyles = makeStyles(() => ({
   divider: {
@@ -19,9 +21,13 @@ const useStyles = makeStyles(() => ({
   options: {
     paddingTop: "200px",
   },
+  selectedOption: {
+    color: "purple",
+  },
 }));
 export default function Menu(props) {
   const { onOptionSelect } = props;
+  const [selectedOption, setSelectedOption] = useState("Home");
   const classes = useStyles();
   const options = [
     {
@@ -42,6 +48,11 @@ export default function Menu(props) {
     },
   ];
 
+  const onOptionSelection = (itemElement, itemName) => {
+    setSelectedOption(itemName);
+    onOptionSelect(itemElement);
+  };
+
   return (
     <div className="menu-container">
       <div className={classes.options}>
@@ -49,9 +60,14 @@ export default function Menu(props) {
           return (
             <div
               className="menu-options"
-              onClick={() => onOptionSelect(item.element)}
+              onClick={() => onOptionSelection(item.element, item.name)}
             >
-              <Typography variant="h6" className={classes.menuOption}>
+              <Typography
+                variant="h6"
+                className={clsx(classes.menuOption, {
+                  [classes.selectedOption]: item.name === selectedOption,
+                })}
+              >
                 {item.name}
               </Typography>
               <Divider className={classes.divider} />
