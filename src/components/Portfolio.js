@@ -25,7 +25,7 @@ export default function Portfolio() {
   return (
     <div>
       <Typography variant="h4" className={classes.title}>
-        Main Project
+        Main Projects
       </Typography>
       <Divider className={classes.divider} />
       <Box className={classes.matter}>
@@ -38,7 +38,7 @@ export default function Portfolio() {
                   Learning
                 </h4>
                 <p>
-                  TLDR- I experimented with the paradigm of using information
+                  TL;DR- I experimented with the paradigm of using information
                   retrieval for zero shot learning in extreme classification
                   with guidance from my mentor. This helped in our published
                   research paper.
@@ -93,9 +93,9 @@ export default function Portfolio() {
                 <p>
                   In large scale multi label learning, there is a long tail
                   distribution of the number of training points of labels.
-                  Different algorithms perform differently for head
+                  Different algorithms perform best for head
                   labels(having lot of training points) and tail labels. So, the
-                  best performing model on head la˛bels should be used for
+                  best performing model on head labels should be used for
                   predicting head labels and similarly for tail labels. But the
                   scores from these two models are not necessarily in the same
                   space. For example, one model gives output in real numbers
@@ -130,8 +130,9 @@ export default function Portfolio() {
                   Creating Wikipedia and Amazon dataset
                 </h4>
                 <p>
-                  My mentor wrote scripts to create Wikipedia article to
+                  The goal was to create Wikipedia article to
                   category and Amazon product to product recommendation dataset.
+                  My mentor had written scripts for an old version of Wikipedia dataset.
                   I modified those scripts in Perl to work with the latest
                   version of Wikipedia dump. This dump consists of html scripts
                   of Wikipedia pages. From this html file, article content and
