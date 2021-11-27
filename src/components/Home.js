@@ -5,7 +5,7 @@ const useStyles = makeStyles(() => ({
   title: {
     margin: "30px 0 0 0 ",
     width: "fit-content",
-    ["@media (max-width:800px)"]: {
+    "@media (max-width:800px)": {
       margin: "auto",
     },
   },
@@ -19,7 +19,7 @@ const useStyles = makeStyles(() => ({
     flexDirection: "column",
     alignItems: "center",
     marginTop: "60px",
-    ["@media (min-width:800px)"]: {
+    "@media (min-width:800px)": {
       flexDirection: "row",
       alignItems: "center",
     },
@@ -27,7 +27,7 @@ const useStyles = makeStyles(() => ({
   profile: {
     width: " 400px",
     height: "400px",
-    ["@media (max-width:800px)"]: {
+    "@media (max-width:800px)": {
       width: " 200px",
       height: "300px",
     },
@@ -35,7 +35,7 @@ const useStyles = makeStyles(() => ({
   introduction: {
     textAlign: "justify",
     marginLeft: "30px",
-    ["@media (max-width:800px)"]: {
+    "@media (max-width:800px)": {
       marginLeft: "0px",
       marginTop: "30px",
     },

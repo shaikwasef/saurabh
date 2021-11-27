@@ -4,7 +4,7 @@ const useStyles = makeStyles(() => ({
   title: {
     margin: "30px 0 0 0 ",
     width: "fit-content",
-    ["@media (max-width:800px)"]: {
+    "@media (max-width:800px)": {
       margin: "auto",
     },
   },
