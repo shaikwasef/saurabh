@@ -4,7 +4,7 @@ const useStyles = makeStyles(() => ({
   resume: {
     width: "fit-content",
     margin: "30px auto",
-    ["@media (max-width:800px)"]: {
+    "@media (max-width:800px)": {
       margin: "-40px -25px",
     },
   },
