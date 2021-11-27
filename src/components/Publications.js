@@ -3,6 +3,10 @@ import { Box, Divider, makeStyles, Typography } from "@material-ui/core";
 const useStyles = makeStyles(() => ({
   title: {
     margin: "30px 0 0 0 ",
+    width: "fit-content",
+    ["@media (max-width:800px)"]: {
+      margin: "auto",
+    },
   },
   divider: {
     margin: "20px 0 0 0",

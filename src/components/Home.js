@@ -4,24 +4,41 @@ import profile from "../assets/profile.png";
 const useStyles = makeStyles(() => ({
   title: {
     margin: "30px 0 0 0 ",
+    width: "fit-content",
+    ["@media (max-width:800px)"]: {
+      margin: "auto",
+    },
   },
   divider: {
     margin: "20px 0 0 0",
+    maxWidth: "100%",
     height: "4px",
   },
   matter: {
     display: "flex",
-    flexDirection: "col",
+    flexDirection: "column",
     alignItems: "center",
     marginTop: "60px",
+    ["@media (min-width:800px)"]: {
+      flexDirection: "row",
+      alignItems: "center",
+    },
   },
   profile: {
     width: " 400px",
     height: "400px",
+    ["@media (max-width:800px)"]: {
+      width: " 200px",
+      height: "300px",
+    },
   },
   introduction: {
     textAlign: "justify",
-    marginRight: "30px",
+    marginLeft: "30px",
+    ["@media (max-width:800px)"]: {
+      marginLeft: "0px",
+      marginTop: "30px",
+    },
   },
 }));
 
@@ -34,6 +51,7 @@ export default function Home() {
       </Typography>
       <Divider className={classes.divider} />
       <Box className={classes.matter}>
+        <img src={profile} className={classes.profile} alt="profile" />
         <Typography variant="h6" className={classes.introduction}>
           I am a mathematics graduate from IIT Kanpur. I have been an analyst at
           Goldman Sachs and a research fellow at Microsoft Research India for
@@ -42,7 +60,6 @@ export default function Home() {
           time reading books. The Incerto series by Nassim Taleb is among my
           absolute favourites. I enjoy going out to do just any fun activity.
         </Typography>
-        <img src={profile} className={classes.profile} alt="profile" />
       </Box>
     </div>
   );
