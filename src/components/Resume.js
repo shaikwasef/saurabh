@@ -20,7 +20,7 @@ export default function Resume() {
           height: "90vh",
           overflowY: "scroll",
         }}
-        src="https://drive.google.com/file/d/1iu2xA6N2Oj01SZq-4-puZCiNV7-lOezI/preview"
+        src="https://drive.google.com/file/d/1JhvvycrjlJGRGkYBfpKD2TOlQp68oSTb/preview"
         width="900"
         height="2320"
       />
