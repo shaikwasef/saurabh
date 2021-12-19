@@ -1,5 +1,7 @@
 import { Box, Divider, makeStyles, Typography } from "@material-ui/core";
 import profile from "../assets/profile.png";
+import Menu from "./Menu";
+import "./Page.css";
 
 const useStyles = makeStyles(() => ({
   title: {
@@ -44,23 +46,30 @@ const useStyles = makeStyles(() => ({
 
 export default function Home() {
   const classes = useStyles();
+
   return (
-    <div className="home-container">
-      <Typography variant="h4" className={classes.title}>
-        Saurabh Purohit
-      </Typography>
-      <Divider className={classes.divider} />
-      <Box className={classes.matter}>
-        <img src={profile} className={classes.profile} alt="profile" />
-        <Typography variant="h6" className={classes.introduction}>
-          I am a mathematics graduate from IIT Kanpur. I have been an analyst at
-          Goldman Sachs and a research fellow at Microsoft Research India for
-          past 2 years. I have worked on recommendation systems, extreme
-          classification and have published in this area. I spend significant
-          time reading books. The Incerto series by Nassim Taleb is among my
-          absolute favourites. I enjoy going out to do just any fun activity.
-        </Typography>
-      </Box>
+    <div className="portfolio-container">
+      <Menu option="Home" />
+      <div className="page-container">
+        <div className="home-container">
+          <Typography variant="h4" className={classes.title}>
+            Saurabh Purohit
+          </Typography>
+          <Divider className={classes.divider} />
+          <Box className={classes.matter}>
+            <img src={profile} className={classes.profile} alt="profile" />
+            <Typography variant="h6" className={classes.introduction}>
+              I am a mathematics graduate from IIT Kanpur. I have been an
+              analyst at Goldman Sachs and a research fellow at Microsoft
+              Research India for past 2 years. I have worked on recommendation
+              systems, extreme classification and have published in this area. I
+              spend significant time reading books. The Incerto series by Nassim
+              Taleb is among my absolute favourites. I enjoy going out to do
+              just any fun activity.
+            </Typography>
+          </Box>
+        </div>
+      </div>
     </div>
   );
 }

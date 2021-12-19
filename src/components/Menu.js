@@ -7,15 +7,12 @@ import {
   Toolbar,
   Typography,
 } from "@material-ui/core";
-import Home from "./Home";
-import Publications from "./Publications";
-import Resume from "./Resume";
 import "./Menu.css";
-import Portfolio from "./Portfolio";
-import { useEffect, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import clsx from "clsx";
+import { useNavigate } from "react-router-dom";
 import sidebar from "../assets/sidebar.jpeg";
+import { useEffect, useState } from "react";
 
 const useStyles = makeStyles(() => ({
   divider: {
@@ -51,10 +48,10 @@ const useStyles = makeStyles(() => ({
 }));
 
 const drawerWidth = 240;
-
 export default function Menu(props) {
-  const { onOptionSelect } = props;
-  const [selectedOption, setSelectedOption] = useState("Home");
+  const { option } = props;
+
+  const navigate = useNavigate();
   const classes = useStyles();
   const [width, setWidth] = useState(window.innerWidth);
   const [open, setOpen] = useState(false);
@@ -69,28 +66,26 @@ export default function Menu(props) {
   const options = [
     {
       name: "Home",
-      element: <Home />,
+      page: "/",
     },
     {
       name: "Publications",
-      element: <Publications />,
+      page: "/publications",
     },
     {
       name: "CV",
-      element: <Resume />,
+      page: "/resume",
     },
     {
       name: "Portfolio",
-      element: <Portfolio />,
+      page: "/portfolio",
     },
   ];
 
-  const onOptionSelection = (itemElement, itemName) => {
-    setSelectedOption(itemName);
-    onOptionSelect(itemElement);
+  const onOptionSelection = (itempage, itemName) => {
+    navigate(itempage);
     setOpen(false);
   };
-
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -99,16 +94,17 @@ export default function Menu(props) {
     return (
       <div className="menu-container">
         <div className={classes.options}>
-          {options.map((item) => {
+          {options.map((item, index) => {
             return (
               <div
                 className="menu-options"
-                onClick={() => onOptionSelection(item.element, item.name)}
+                onClick={() => onOptionSelection(item.page, item.name)}
+                key={index}
               >
                 <Typography
                   variant="h6"
                   className={clsx(classes.menuOption, {
-                    [classes.selectedOption]: item.name === selectedOption,
+                    [classes.selectedOption]: item.name === option,
                   })}
                 >
                   {item.name}
@@ -149,16 +145,17 @@ export default function Menu(props) {
         className={classes.drawer}
         onClose={() => setOpen(false)}
       >
-        {options.map((item) => {
+        {options.map((item, index) => {
           return (
             <div
               className="menu-options"
-              onClick={() => onOptionSelection(item.element, item.name)}
+              onClick={() => onOptionSelection(item.page, item.name)}
+              key={index}
             >
               <Typography
                 variant="h6"
                 className={clsx(classes.menuOption, {
-                  [classes.selectedOption]: item.name === selectedOption,
+                  [classes.selectedOption]: item.name === option,
                 })}
               >
                 {item.name}

@@ -1,19 +1,20 @@
-import { useState } from "react";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home";
-import Menu from "./components/Menu";
-import Page from "./components/Page";
+import Portfolio from "./components/Portfolio";
+import Publications from "./components/Publications";
+import Resume from "./components/Resume";
 
 function App() {
-  const [jsxElement, setJsxElement] = useState(<Home />);
-  const onOptionSelect = (element) => {
-    setJsxElement(element);
-  };
   return (
-    <div className="portfolio-container">
-      <Menu onOptionSelect={onOptionSelect} />
-      <Page component={jsxElement} />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/publications" element={<Publications />} />
+        <Route path="/resume" element={<Resume />} />
+        <Route exact path="/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 export default App;
