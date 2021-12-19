@@ -51,6 +51,8 @@ const drawerWidth = 240;
 export default function Menu(props) {
   const { option } = props;
 
+  const navigate = useNavigate();
+  const classes = useStyles();
   const [width, setWidth] = useState(window.innerWidth);
   const [open, setOpen] = useState(false);
 
@@ -61,8 +63,6 @@ export default function Menu(props) {
     window.addEventListener("resize", handleResize);
   }, []);
 
-  const navigate = useNavigate();
-  const classes = useStyles();
   const options = [
     {
       name: "Home",
@@ -117,7 +117,6 @@ export default function Menu(props) {
       </div>
     );
   }
-
   return (
     <>
       <AppBar className={classes.appBar} position="fixed" open={open}>
