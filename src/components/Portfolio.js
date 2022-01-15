@@ -31,7 +31,7 @@ export default function Portfolio() {
       <div className="page-container">
         <div>
           <Typography variant="h4" className={classes.title}>
-            Main Project
+            Main Projects
           </Typography>
           <Divider className={classes.divider} />
           <Box className={classes.matter}>
@@ -44,7 +44,8 @@ export default function Portfolio() {
                       Learning
                     </h4>
                     <p>
-                      TLDR- I experimented with the paradigm of using
+                      TL;DR- I wrote thousands of lines of scalable ML code
+		      in Python and C++,experimenting with the paradigm of using
                       information retrieval for zero shot learning in extreme
                       classification with guidance from my mentor. This helped
                       in our published research paper.
